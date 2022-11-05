@@ -1,0 +1,26 @@
+---
+title: "Human activity bot"
+author: "DL"
+date: "2022-11-01"
+output: pdf_document
+---
+
+```{r Setup}
+options(scipen = 99)
+library(tidyverse)
+require(keras)
+library(tensorflow)
+data <- read_csv('~/GitHub/Kaggle_fun_time/Human activity/time_series_data_human_activities.csv')
+```
+
+
+```{r Build model}
+model <- keras_model_sequential()
+
+model %>% 
+  layer_dense(units = 64, activation = 'relu') %>% 
+  layer_dense(units = 64, activation = 'relu') %>% 
+  layer_dense(units = 10, activation = 'softmax')
+model$
+```
+
